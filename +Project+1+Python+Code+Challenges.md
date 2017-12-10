@@ -29,34 +29,14 @@ The sum of the primes below 10 is 2 + 3 + 5 + 7 = 17. Find the sum of all the pr
 
 
 ```python
-
+import math
 def is_prime(n):
     status = True
     if n < 2:
         status = False
     else:
-        for i in range(2,n):
-            if n % i == 0:
-                status = False
-    return status
- 
-p=[]
-for n in range(1,17):
-    if is_prime(n):
-        p.append(n)
-s = sum(p)
-print(s)
-```
-
-
-```python
-
-def is_prime(n):
-    status = True
-    if n < 2:
-        status = False
-    else:
-        for i in range(2,n):
+        #If the number greater than its square divides it, there's a number smaller than the square 
+        for i in range(2,int(math.sqrt(n)+1)):
             if n % i == 0:
                 status = False
     return status
@@ -66,8 +46,11 @@ for n in range(1,2000000):
     if is_prime(n):
         p.append(n)
 s = sum(p)
-print(s)
+print(s,':sum of all the primes below two million')
 ```
+
+    142913828922 :sum of all the primes below two million
+
 
 **Challenge 3: Multiples of 3 and 5**
 
